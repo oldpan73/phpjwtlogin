@@ -7,7 +7,7 @@ function jwt_encode($payload, $key) {
   $payload = base64_encode(json_encode($payload));
   $signature = hash_hmac('sha256', "$header.$payload", $key, true);
   $signature = base64_encode($signature);
-  return "$header.$payload.$signature";
+  return "$header.$payload.$signature"; 
 }
 
 $username = $_POST['username'];
